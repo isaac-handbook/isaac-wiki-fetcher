@@ -409,6 +409,12 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
     "部分胶囊会转换为其他胶囊。"
   );
 
+  value = value.replace(/小战争/g, "{{file|小战争.png}}小战争");
+  value = value.replace(/小瘟疫/g, "{{file|小瘟疫.png}}小瘟疫");
+  value = value.replace(/小饥荒/g, "{{file|小饥荒.png}}小饥荒");
+  value = value.replace(/小死亡/g, "{{file|小死亡.png}}小死亡");
+  value = value.replace(/小征服/g, "{{file|小征服.png}}小征服");
+
   value = value.replace(/。\|/g, "。");
   value = value.replace(/成就\//g, "成就#");
   value = value.replace(/雅各\|雅各和以扫\|/g, "雅各和以扫");
