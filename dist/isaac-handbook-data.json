@@ -1,5 +1,256 @@
 {
   "extra": {
+    "suitList": [
+      {
+        "name": "嗝屁猫"
+      },
+      {
+        "name": "宝宝"
+      },
+      {
+        "name": "注射器"
+      },
+      {
+        "name": "恶魔"
+      },
+      {
+        "name": "天使"
+      },
+      {
+        "name": "苍蝇"
+      },
+      {
+        "name": "书"
+      },
+      {
+        "name": "蘑菇"
+      },
+      {
+        "name": "妈妈"
+      },
+      {
+        "name": "大便"
+      },
+      {
+        "name": "蜘蛛"
+      },
+      {
+        "name": "鲍勃"
+      }
+    ],
+    "sacrificeRoom": {
+      "columns": [
+        {
+          "title": "献祭次数",
+          "key": "sacrifice"
+        },
+        {
+          "title": "概率",
+          "key": "chance"
+        },
+        {
+          "title": "奖励",
+          "key": "award"
+        }
+      ],
+      "data": [
+        {
+          "sacrifice": "1~2",
+          "chance": "50%",
+          "award": "无效果"
+        },
+        {
+          "sacrifice": "1~2",
+          "chance": "50%",
+          "award": "1个硬币"
+        },
+        {
+          "sacrifice": "3",
+          "chance": "33%",
+          "award": "无效果"
+        },
+        {
+          "sacrifice": "3",
+          "chance": "67%",
+          "award": "天使房转换率上升"
+        },
+        {
+          "sacrifice": "4",
+          "chance": "50%",
+          "award": "无效果"
+        },
+        {
+          "sacrifice": "4",
+          "chance": "50%",
+          "award": "1个随机类型宝箱"
+        },
+        {
+          "sacrifice": "5",
+          "chance": "33%",
+          "award": "3个硬币"
+        },
+        {
+          "sacrifice": "5",
+          "chance": "67%",
+          "award": "更强的天使房转换率上升"
+        },
+        {
+          "sacrifice": "6",
+          "chance": "33%",
+          "award": "传送到{{room|恶魔房}}/{{room|天使房}}"
+        },
+        {
+          "sacrifice": "6",
+          "chance": "67%",
+          "award": "1个随机类型箱子"
+        },
+        {
+          "sacrifice": "7",
+          "chance": "33%",
+          "award": "1个{{pool|天使房}}"
+        },
+        {
+          "sacrifice": "7",
+          "chance": "67%",
+          "award": "一个魂心"
+        },
+        {
+          "sacrifice": "8",
+          "chance": "100%",
+          "award": "6个即爆炸弹"
+        },
+        {
+          "sacrifice": "9",
+          "chance": "100%",
+          "award": "生成一个{{entity|乌列|-320px-480px|boss}}"
+        },
+        {
+          "sacrifice": "10",
+          "chance": "50%",
+          "award": "7个魂心"
+        },
+        {
+          "sacrifice": "10",
+          "chance": "50%",
+          "award": "30个硬币"
+        },
+        {
+          "sacrifice": "11",
+          "chance": "100%",
+          "award": "生成一个{{entity|加百列|-320px-480px|boss}}"
+        },
+        {
+          "sacrifice": "≥12",
+          "chance": "50%",
+          "award": "无效果"
+        },
+        {
+          "sacrifice": "≥12",
+          "chance": "50%",
+          "award": "传送至{{stage|暗室}}"
+        }
+      ]
+    },
+    "diceRoom": {
+      "columns": [
+        {
+          "title": "房间点数",
+          "key": "dice"
+        },
+        {
+          "title": "效果",
+          "key": "effect"
+        }
+      ],
+      "data": [
+        {
+          "dice": "1",
+          "effect": "重置角色身上的所有道具（{{item|四面骰}}的效果。）"
+        },
+        {
+          "dice": "2",
+          "effect": "重置当前房间的所有掉落物（{{item|二十面骰}}的效果）。"
+        },
+        {
+          "dice": "3",
+          "effect": "重置本层所有房间内的掉落物和饰品，包括{{room|商店}}内的掉落物，不会影响{{room|恶魔房}}/{{room|天使房}}/{{room|黑市}}和{{room|夹层}}。"
+        },
+        {
+          "dice": "4",
+          "effect": "重置本层内的所有基座道具（{{item|六面骰}}的效果），不会影响{{room|恶魔房}}/{{room|天使房}}/{{room|黑市}}和{{room|夹层}}。"
+        },
+        {
+          "dice": "5",
+          "effect": "重置并重新开始本层（{{item|遗忘药}}的效果）。"
+        },
+        {
+          "dice": "6",
+          "effect": "触发1点+3点+4点的效果。"
+        }
+      ]
+    },
+    "bossMark": {
+      "columns": [
+        {
+          "title": "通关标记",
+          "key": "mark"
+        },
+        {
+          "title": "BOSS",
+          "key": "boss"
+        }
+      ],
+      "data": [
+        {
+          "mark": "{{mark|妈妈的心脏.png}}",
+          "boss": "{{entity|妈妈的心脏|-320px-288px|boss}}"
+        },
+        {
+          "mark": "{{mark|撒但.png}}",
+          "boss": "{{entity|撒但|-384px-336px|boss}}"
+        },
+        {
+          "mark": "{{mark|以撒.png}}",
+          "boss": "{{entity|以撒|-384px-384px|boss}}"
+        },
+        {
+          "mark": "{{mark|羔羊.png}}",
+          "boss": "{{entity|羔羊|-384px-480px|boss}}"
+        },
+        {
+          "mark": "{{mark|？？？.png}}",
+          "boss": "{{entity|???|-0px-432px|boss}}"
+        },
+        {
+          "mark": "{{mark|超级撒但.png}}",
+          "boss": "{{entity|超级撒但|-0px-528px|boss}}"
+        },
+        {
+          "mark": "{{mark|死寂.png}}",
+          "boss": "{{entity|死寂|-64px-576px|boss}}"
+        },
+        {
+          "mark": "{{mark|精神错乱.png}}",
+          "boss": "{{entity|精神错乱|-0px-624px|boss}}"
+        },
+        {
+          "mark": "{{mark|母亲.png}}",
+          "boss": "{{entity|母亲|-0px-816px|boss}}"
+        },
+        {
+          "mark": "{{mark|祸兽.png}}",
+          "boss": "{{entity|祸兽|-320px-864px|boss}}"
+        },
+        {
+          "mark": "{{mark|Boss Rush.png}}",
+          "boss": "头目车轮战"
+        },
+        {
+          "mark": "{{mark|贪婪模式.png}}",
+          "boss": "{{mode|贪婪模式}}"
+        }
+      ]
+    },
     "tagInfo": {
       "攻击性": [
         "每当游戏即将生成随机道具时，如果人物为{{chara|堕化游魂}}，则改为生成标签“攻击性”的随机道具。"
@@ -55,9 +306,9 @@
         "不受{{item|错误王冠}}、{{item|错误技}}、{{item|遥控器}}、{{item|创世记}}的影响。"
       ],
       "苍蝇": [
+        "角色获得飞行效果。",
         "大部分的苍蝇类型的敌人会变为蓝苍蝇。",
-        "其他类似的敌人例如炸弹苍蝇及其变种会变为友好状态，可跟随角色进入其他房间或楼层。",
-        "角色获得飞行效果。"
+        "其他类似的敌人例如炸弹苍蝇及其变种会变为友好状态，可跟随角色进入其他房间或楼层。"
       ],
       "蘑菇": [
         "获得一个心之容器。"
@@ -98,6 +349,7 @@
         "角色会对毒性伤害免疫。"
       ],
       "嗝屁猫": [
+        "角色获得飞行效果。",
         "每当角色对敌人造成伤害时，有50%概率生成1只蓝苍蝇。"
       ]
     },
@@ -35564,6 +35816,11 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "level": 1,
+              "value": "因接触角色而中毒的敌人死亡后有20%概率生成1个黑心",
+              "children": []
             }
           ]
         },
