@@ -21,6 +21,7 @@ export type BriefItem = {
 
 export type ItemDetailNode = {
   level: number;
+  extra: string[];
   value: string;
   children: ItemDetailNode[];
 };

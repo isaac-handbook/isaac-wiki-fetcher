@@ -18,6 +18,11 @@ const ignoreNodeTitleList = [
   "外部链接",
   "算法与模拟",
   "算法",
+  "键位",
+  "解锁方式",
+  "被移除的道具",
+  "不可投掷",
+  "可投掷",
 ];
 
 /**
@@ -31,6 +36,8 @@ const parseText = async (
   text = text
     .replace(/----\n/g, "")
     .replace(/{{ItemNav}}/g, "")
+    .replace(/{{clear}}/g, "")
+    .replace(/{{infobox character\|12}}/g, "")
     .replace(/{{TrinketNav}}/g, "")
     .replace(/{{CPNav}}/g, "")
     .replace(/（实体ID：.*?）/g, "")
@@ -93,6 +100,7 @@ const parseText = async (
         const child: ItemDetailNode = {
           level: depth,
           value: formatedValue,
+          extra: [],
           children: await parseChildren(index + 1, depth + 1),
         };
         children.push(child);
@@ -107,7 +115,7 @@ const parseText = async (
   const result: ItemDetailNode[] = [];
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].startsWith("==")) {
-      const nodeTitle = lines[i].replace(/==/g, "").trim();
+      const nodeTitle = lines[i].replace(/=/g, "").trim();
       // 只获取指定标题的
       // if (!targetNodeTitleList.includes(nodeTitle)) {
       //   continue;
@@ -126,14 +134,23 @@ const parseText = async (
       }
       const mainTitle: ItemDetailNode = {
         level: 0,
-        value: formatedValue,
+        extra: [],
+        value: formatMainValue(formatedValue),
         children: await parseChildren(i + 1, 1),
       };
+      if (lines[i].startsWith("===")) {
+        mainTitle.extra.push("subTitle");
+      }
       result.push(mainTitle);
     }
   }
 
   return result;
+};
+
+// 额外格式化单个主标题
+const formatMainValue = (value: string) => {
+  return value.replace(/\=/g, "");
 };
 
 // 格式化单个 value 的值
@@ -241,7 +258,7 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   }
 
   if (value === "当人物为{{chara|堕化夏娃}}时：") {
-    value = "";
+    value = "当人物为{{chara|堕化夏娃}}时：请查阅{{chara|堕化夏娃}}";
   }
 
   value = value.replace(/{{需要确认概率}}/g, "");
@@ -404,6 +421,70 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   value = value.replace(/试验性/g, "实验性");
   value = value.replace(/饥荒之/g, "饥荒");
   value = value.replace(/木制五元币/g, "木制镍币");
+  value = value.replace(/回满血量/g, "体力回满");
+  value = value.replace(/1up！/g, "1UP!");
+  value = value.replace(/大便\(道具\)/g, "大便");
+  value = value.replace(/雷霆大腿/g, "霹雳大腿");
+  value = value.replace(/妈妈的吻/g, "母亲的吻");
+  value = value.replace(/插头/g, "锋利插头");
+  value = value.replace(/尖牙利爪/g, "肉中刺");
+  value = value.replace(/怪蛋的肺/g, "萌死戳的肺");
+  value = value.replace(/（heavyattackratepenalty）/g, "");
+  value = value.replace(/雅各的天梯/g, "雅各布天梯");
+  value = value.replace(/苍蝇罐头/g, "苍蝇罐");
+  value = value.replace(/平衡标志/g, "平衡符号");
+  value = value.replace(/眼泪起爆器/g, "眼泪引爆器");
+  value = value.replace(/犹大之影/g, "犹大的影子");
+  value = value.replace(/遥控起爆器/g, "起爆器");
+  value = value.replace(/厨刀部件/g, "菜刀碎片");
+  value = value.replace(/害虫横行2/g, "害虫横行II");
+  value = value.replace(/趋泪行为/g, "食泪症");
+  value = value.replace(/欲望之血/g, "血嗜");
+  value = value.replace(/深渊/g, "无底坑");
+  value = value.replace(/giveitem/g, "give item");
+  value = value.replace(/木勺/g, "木头勺子");
+  value = value.replace(/砰！/g, "轰！");
+  value = value.replace(/污秽之心/g, "龌龊之心");
+  value = value.replace(/魂瓶/g, "灵魂之瓮");
+  value = value.replace(/重生十字架/g, "安卡十字");
+  value = value.replace(/所多玛的苹果/g, "所多玛之果");
+  value = value.replace(/锋利的吸管/g, "尖头吸管");
+  value = value.replace(/玛姬的蝴蝶结/g, "抹大拉的蝴蝶结");
+  value = value.replace(/吸血鬼的魔力/g, "吸血鬼之魅");
+  value = value.replace(/遗失的隐形眼镜/g, "丢失的隐形眼镜");
+  value = value.replace(/瘸子/g, "兽性面具");
+  value = value.replace(/凯尔特十字架/g, "凯尔特十字");
+  value = value.replace(/巴风特的印记/g, "巴风特之印");
+  value = value.replace(/死者之书/g, "亡者之书");
+  value = value.replace(/复活节蜡烛/g, "逾越节蜡烛");
+  value = value.replace(/清澈的符文/g, "透明符文");
+  value = value.replace(/驼鹿/g, "保护符文");
+  value = value.replace(/孤独的灵魂/g, "孤魂铁索");
+  value = value.replace(/黑魔法/g, "暗仪刺刀");
+  value = value.replace(/完美/g, "满分考卷");
+  value = value.replace(/指示物骰子/g, "计数二十面骰");
+  value = value.replace(/奇异吸子/g, "怪异磁铁");
+  value = value.replace(/寄生帽/g, "寄居骷髅帽");
+  value = value.replace(/克里吉特的身体/g, "柯吉猫的身体");
+  value = value.replace(/断裂的钥匙/g, "红钥匙碎片");
+  value = value.replace(/美丽蝇/g, "大美蝇");
+  value = value.replace(/1金钱力量/g, "金钱=力量");
+  value = value.replace(/诅咒的硬币/g, "诅咒硬币");
+  value = value.replace(/圣体光/g, "圣体匣");
+  value = value.replace(/120伏特/g, "220伏");
+  value = value.replace(/拉撒路的破布/g, "拉撒路的绷带");
+  value = value.replace(/缝线娃娃/g, "织布魔偶");
+  value = value.replace(/吼！/g, "呕！");
+  value = value.replace(/太恐怖了/g, "恐怖如斯");
+  value = value.replace(/手电筒/g, "小夜灯");
+  value = value.replace(/空罐子/g, "罐子");
+  value = value.replace(/魔法皮肤/g, "玄奇驴皮");
+  value = value.replace(/点亮的灯泡/g, "亮灯泡");
+  value = value.replace(/黯淡的灯泡/g, "暗灯泡");
+  value = value.replace(/书虫！/g, "{{suit|书套装}}");
+  value = value.replace(/别西卜！/g, "{{suit|苍蝇套装}}");
+  value = value.replace(/连体！/g, "{{suit|宝宝套装}}");
+  value = value.replace(/蜘蛛宝宝！/g, "{{suit|蜘蛛套装}}");
   value = value.replace(
     /部分胶囊会转换为其他胶囊：/g,
     "部分胶囊会转换为其他胶囊。"
@@ -433,11 +514,18 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   value = value.replace(/\{\{item\|弹珠\}\}/g, "{{item|弹珠袋}}");
   value = value.replace(/\{\{item\|D6\}\}/g, "{{item|六面骰}}");
   value = value.replace(/\{\{item\|D4\}\}/g, "{{item|四面骰}}");
+  value = value.replace(/\{\{item\|D20\}\}/g, "{{item|二十面骰}}");
   value = value.replace(/\{\{item\|铁镐\}\}/g, "{{item|残损铁镐}}");
   value = value.replace(/\{\{item\|鼻涕\}\}/g, "{{item|鼻涕泡}}");
   value = value.replace(/\{\{item\|圣地\}\}/g, "{{item|圣地大便}}");
   value = value.replace(/\{\{item\|吐根\}\}/g, "{{item|吐根酊}}");
   value = value.replace(/\{\{item\|橡皮\}\}/g, "{{item|橡皮擦}}");
+  value = value.replace(/\{\{item\|选择\}\}/g, "{{item|额外选择}}");
+  value = value.replace(/\{\{item\|谷底\}\}/g, "{{item|谷底石}}");
+  value = value.replace(/\{\{item\|白卡\}\}/g, "{{item|空白卡牌}}");
+  value = value.replace(/\{\{item\|秒表\}\}/g, "{{item|怀表}}");
+  value = value.replace(/\{\{item\|传送\}\}/g, "{{item|传送！}}");
+  value = value.replace(/\{\{item\|捆绑包\}\}/g, "{{item|慈善捆绑包}}");
 
   // 如果以#开头，则删除这个#
   if (value.startsWith("#")) {

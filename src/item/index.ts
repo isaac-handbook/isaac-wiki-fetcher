@@ -18,8 +18,8 @@ const START_INDEX = 0;
 // 间隔时间
 export const INTERVAL = 0;
 // 爬取类型
-export type CleanType = "item" | "trinket" | "card" | "pill";
-export const TYPE: CleanType = "card";
+export type CleanType = "item" | "trinket" | "card" | "pill" | "chara";
+export const TYPE: CleanType = "item";
 
 export const cleanAllItems = async (targetType?: CleanType) => {
   const startTime = new Date().getTime();

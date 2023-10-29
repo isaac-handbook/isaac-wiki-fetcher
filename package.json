@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.mjs",
   "scripts": {
-    "dev": "nodemon"
+    "all": "nodemon",
+    "chara": "nodemon --exec ts-node --transpile-only src/chara/index.ts"
   },
   "author": "",
   "license": "MIT",

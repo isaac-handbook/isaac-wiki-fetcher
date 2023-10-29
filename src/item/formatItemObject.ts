@@ -23,6 +23,24 @@ function removeUnwantedContent(data) {
         i--;
         continue;
       }
+      // 如果当前value为空，且没有子元素的，删除
+      if (content[i].value === "" && content[i].children.length === 0) {
+        content.splice(i, 1);
+        i--;
+        continue;
+      }
+      // 如果当前value为空，且有子元素，则将该子元素提升到当前层级
+      if (content[i].value === "" && content[i].children.length > 0) {
+        // 首先将子元素中所有level都加一
+        content[i].children.forEach((child) => {
+          child.level -= 1;
+        });
+        // 将子元素提升到当前层级
+        content.splice(i, 1, ...content[i].children);
+        // 由于splice改变了数组的索引，所以i需要减1
+        i--;
+        continue;
+      }
       // 递归处理children
       if (content[i].children && content[i].children.length > 0) {
         recursiveHandler(content[i].children);

@@ -11,6 +11,8 @@ export const TRINKET_DETAIL_URL = `https://isaac.huijiwiki.com/wiki/T{{itemCode}
 export const CARD_DETAIL_URL = `https://isaac.huijiwiki.com/wiki/K{{itemCode}}`;
 // 胶囊
 export const PILL_DETAIL_URL = `https://isaac.huijiwiki.com/wiki/P{{itemCode}}`;
+// 角色
+export const CHARA_DETAIL_URL = `https://isaac.huijiwiki.com/wiki/{{itemCode}}`;
 
 export const getItemDetailHtml = async (code: string, TYPE: CleanType) => {
   let url = "";
@@ -25,6 +27,9 @@ export const getItemDetailHtml = async (code: string, TYPE: CleanType) => {
   }
   if (TYPE === "pill") {
     url = PILL_DETAIL_URL;
+  }
+  if (TYPE === "chara") {
+    url = CHARA_DETAIL_URL;
   }
   const response = await fetchWithRetry(url.replace("{{itemCode}}", code));
   return response.data;
