@@ -481,6 +481,8 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   value = value.replace(/魔法皮肤/g, "玄奇驴皮");
   value = value.replace(/点亮的灯泡/g, "亮灯泡");
   value = value.replace(/黯淡的灯泡/g, "暗灯泡");
+  value = value.replace(/满分考卷视力/g, "完美视力");
+
   value = value.replace(/书虫！/g, "{{suit|书套装}}");
   value = value.replace(/别西卜！/g, "{{suit|苍蝇套装}}");
   value = value.replace(/连体！/g, "{{suit|宝宝套装}}");
@@ -495,6 +497,14 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   value = value.replace(/小饥荒/g, "{{file|小饥荒.png}}小饥荒");
   value = value.replace(/小死亡/g, "{{file|小死亡.png}}小死亡");
   value = value.replace(/小征服/g, "{{file|小征服.png}}小征服");
+  value = value.replace(
+    /{{chara\|雅各}}\/{{chara\|以扫}}/g,
+    "{{chara|雅各和以扫}}"
+  );
+  value = value.replace(
+    /{{chara\|雅各}}和{{chara\|以扫}}/g,
+    "{{chara|雅各和以扫}}"
+  );
 
   value = value.replace(/。\|/g, "。");
   value = value.replace(/成就\//g, "成就#");
