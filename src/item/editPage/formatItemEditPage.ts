@@ -426,7 +426,6 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   value = value.replace(/大便\(道具\)/g, "大便");
   value = value.replace(/雷霆大腿/g, "霹雳大腿");
   value = value.replace(/妈妈的吻/g, "母亲的吻");
-  value = value.replace(/插头/g, "锋利插头");
   value = value.replace(/尖牙利爪/g, "肉中刺");
   value = value.replace(/怪蛋的肺/g, "萌死戳的肺");
   value = value.replace(/（heavyattackratepenalty）/g, "");
@@ -536,6 +535,7 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   value = value.replace(/\{\{item\|秒表\}\}/g, "{{item|怀表}}");
   value = value.replace(/\{\{item\|传送\}\}/g, "{{item|传送！}}");
   value = value.replace(/\{\{item\|捆绑包\}\}/g, "{{item|慈善捆绑包}}");
+  value = value.replace(/\{\{item\|插头\}\}/g, "锋利插头");
 
   // 如果以#开头，则删除这个#
   if (value.startsWith("#")) {

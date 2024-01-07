@@ -4,8 +4,15 @@
   "description": "",
   "main": "src/index.mjs",
   "scripts": {
-    "all": "nodemon",
-    "chara": "nodemon --exec ts-node --transpile-only src/chara/index.ts"
+    "start": "ts-node --transpile-only src/index.ts",
+    "fetch:all": "MODE=prod TYPE=all npm start",
+    "fetch:item": "MODE=prod TYPE=item npm start",
+    "fetch:trinket": "MODE=prod TYPE=trinket npm start",
+    "fetch:card": "MODE=prod TYPE=card npm start",
+    "fetch:pill": "MODE=prod TYPE=pill npm start",
+    "fetch:chara": "MODE=prod TYPE=chara npm start",
+    "dev": "MODE=dev nodemon",
+    "dev:chara": "MODE=dev nodemon --exec ts-node --transpile-only src/chara/index.ts"
   },
   "author": "",
   "license": "MIT",

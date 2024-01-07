@@ -9,23 +9,30 @@ import { myLog } from "../utils/log";
 import { formatItemObject } from "./formatItemObject";
 import { extraItems } from "./extraItems";
 
-// 是否全部爬取
-export const IS_ALL = true;
+export type CleanType = "item" | "trinket" | "card" | "pill" | "chara";
+
 // 获取多少个
-const TARGET_LENGTH = 2000;
+const dev_TARGET_LENGTH = 2;
 // 从第几个开始
-const START_INDEX = 0;
+const dev_START_INDEX = 1;
+// 爬取类型
+export const dev_TYPE: CleanType = "card";
+
 // 间隔时间
 export const INTERVAL = 0;
-// 爬取类型
-export type CleanType = "item" | "trinket" | "card" | "pill" | "chara";
-export const TYPE: CleanType = "item";
 
-export const cleanAllItems = async (targetType?: CleanType) => {
+export const cleanAllItems = async (
+  cleanType: CleanType | undefined,
+  startIndex: number | undefined,
+  targetLength: number | undefined,
+  saveDirectory: string
+) => {
   const startTime = new Date().getTime();
   const otpList: Item[] = [];
 
-  const TYPE_ = targetType || TYPE;
+  const TYPE_ = cleanType ?? dev_TYPE;
+  const START_INDEX_ = startIndex ?? dev_START_INDEX;
+  const TARGET_LENGTH_ = targetLength ?? dev_TARGET_LENGTH;
 
   let count = 0;
   let itemList = await getItemList(TYPE_);
@@ -53,7 +60,7 @@ export const cleanAllItems = async (targetType?: CleanType) => {
   }
 
   for (const item of itemList) {
-    if (Number(item.id) < START_INDEX) {
+    if (Number(item.id) < START_INDEX_) {
       // 如果位于extraItems中，不跳过
       if (TYPE_ === "item") {
         if (!extraItems.find((extraItem) => extraItem.id === item.id)) {
@@ -63,7 +70,7 @@ export const cleanAllItems = async (targetType?: CleanType) => {
         continue;
       }
     }
-    if (Number(item.id) >= START_INDEX + TARGET_LENGTH) {
+    if (Number(item.id) >= START_INDEX_ + TARGET_LENGTH_) {
       break;
     }
     if (!item.id) {
@@ -84,31 +91,13 @@ export const cleanAllItems = async (targetType?: CleanType) => {
     };
 
     otpList.push(formatItemObject(itemObject));
-    if (count < TARGET_LENGTH) {
+    if (count < TARGET_LENGTH_) {
       // 停顿
       await randomSleep(INTERVAL);
     }
   }
 
-  // 生成带当前时间戳的json文件名
-  const now = new Date();
-  const fileName = `${TYPE_}-${otpList.length}-${now.getFullYear()}-${
-    now.getMonth() + 1
-  }-${now.getDate()}-${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}.json`;
-
-  if (otpList.length === 0) {
-    myLog("内容为空！");
-    return;
-  }
-
-  const logDirectory = path.join(__dirname, "../..", "output");
-
-  // 确保日志目录存在
-  if (!fs.existsSync(logDirectory)) {
-    fs.mkdirSync(logDirectory);
-  }
-
-  const logFilename = path.join(logDirectory, fileName);
+  const logFilename = path.join(saveDirectory, TYPE_ + "s.json");
 
   // 保存到src同级的output文件夹下
   fs.writeFileSync(logFilename, JSON.stringify(otpList, null, 2));

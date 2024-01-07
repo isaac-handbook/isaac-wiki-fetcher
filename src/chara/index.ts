@@ -27,7 +27,7 @@ const getDetailContentHtml = async (charaName: string) => {
   return response.data;
 };
 
-const run = async () => {
+const run = async (saveDirectory: string) => {
   const charaListMap: Record<string, Chara> = {};
 
   for (const charaName of charaList) {
@@ -177,29 +177,10 @@ const run = async () => {
     charaListMap[charaName] = chara as Chara;
   }
 
-  // 保存 charaListMap 到 output/charaListMap.json
-  // 生成带当前时间戳的json文件名
-  const now = new Date();
-  const fileName = `chara-${now.getFullYear()}-${
-    now.getMonth() + 1
-  }-${now.getDate()}-${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}.json`;
-
-  if (JSON.stringify(charaListMap) === "{}") {
-    myLog("内容为空！");
-    return;
-  }
-
-  const logDirectory = path.join(__dirname, "../..", "output");
-
-  // 确保日志目录存在
-  if (!fs.existsSync(logDirectory)) {
-    fs.mkdirSync(logDirectory);
-  }
-
-  const logFilename = path.join(logDirectory, fileName);
+  const logFilename = path.join(saveDirectory, "chara.json");
 
   // 保存到src同级的output文件夹下
   fs.writeFileSync(logFilename, JSON.stringify(charaListMap, null, 2));
 };
 
-run();
+export const cleanAllCharas = run;
