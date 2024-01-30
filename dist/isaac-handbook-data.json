@@ -1,4 +1,5 @@
 {
+  "version": 1,
   "extra": {
     "suitList": [
       {
@@ -3889,7 +3890,7 @@
         {
           "nameZh": "游魂",
           "nameEn": "The Lost",
-          "unlock": "角色因献祭而死亡，且拥有 寻人启事。",
+          "unlock": "角色因献祭而死亡，且拥有 寻人启事。",
           "id": "10",
           "health": "{{math|/}}",
           "speed": "{{math|/}}",
@@ -5226,7 +5227,7 @@
         {
           "nameZh": "遗骸",
           "nameEn": "The Forgotten",
-          "unlock": "使用 妈妈的铲子挖开碎土块。",
+          "unlock": "使用 妈妈的铲子挖开碎土块。",
           "id": "16",
           "health": "{{health|骨0}}{{health|骨0}}",
           "speed": "{{math|/}}",
@@ -17154,7 +17155,7 @@
         "贪婪|隐藏房",
         "贪婪|图书馆"
       ],
-      "unlock": "使用 XIII-死亡4次。",
+      "unlock": "使用 XIII-死亡4次。",
       "descZh": "群体伤害",
       "descEn": "Mass room damage",
       "content": [
@@ -20851,7 +20852,7 @@
       "id": "72",
       "quality": "2",
       "charge": "/",
-      "description": "魂心+3，射速上升。获得 圣经的概率提高。",
+      "description": "魂心+3，射速上升。获得 圣经的概率提高。",
       "iconPosition": "-320px -96px",
       "tags": [
         "非游魂长子名分",
@@ -22491,7 +22492,7 @@
         "宝箱房",
         "头目房"
       ],
-      "unlock": "生成1个4级的 绷带妹。",
+      "unlock": "生成1个4级的 绷带妹。",
       "descZh": "+2颗心",
       "descEn": "+2 hearts",
       "content": [
@@ -23117,7 +23118,7 @@
         "贪婪|宝箱房",
         "贪婪|头目房"
       ],
-      "unlock": "使用 圣经击败{{entity||-128px -48px|boss}}妈妈、{{entity||-320px -288px|boss}}妈妈的心脏或{{entity||-384px -288px|boss}}它还活着。",
+      "unlock": "使用 圣经击败{{entity||-128px -48px|boss}}妈妈、{{entity||-320px -288px|boss}}妈妈的心脏或{{entity||-384px -288px|boss}}它还活着。",
       "descZh": "所有属性上升",
       "descEn": "All stats up",
       "content": [
@@ -31797,7 +31798,7 @@
         "旧箱子",
         "贪婪|宝箱房"
       ],
-      "unlock": "在一局游戏中，同时拥有 钥匙碎片1和 钥匙碎片2。",
+      "unlock": "在一局游戏中，同时拥有 钥匙碎片1和 钥匙碎片2。",
       "descZh": "打开所有门…",
       "descEn": "Opens all doors...",
       "content": [
@@ -43822,8 +43823,8 @@
         "贪婪|商店"
       ],
       "unlock": "用{{chara|拉撒路}}获得羔羊通关标记。",
-      "descZh": "? ?",
-      "descEn": "? ?",
+      "descZh": "? ?",
+      "descEn": "? ?",
       "content": [
         {
           "level": 0,
@@ -69238,7 +69239,7 @@
       "pools": [
         "商店"
       ],
-      "unlock": "在暗室中，使用 潘多拉魔盒。",
+      "unlock": "在暗室中，使用 潘多拉魔盒。",
       "descZh": "打包再拆包",
       "descEn": "Pack and unpack",
       "content": [
@@ -70380,7 +70381,7 @@
         "究极隐藏房",
         "贪婪|宝箱房"
       ],
-      "unlock": "拾取 血块10次。",
+      "unlock": "拾取 血块10次。",
       "descZh": "我眼前一片红色…",
       "descEn": "I'm seeing red...",
       "content": [
@@ -72200,7 +72201,7 @@
         "夹娃娃机",
         "贪婪|头目房"
       ],
-      "unlock": "在一局游戏中，使用 咕噜！5次。",
+      "unlock": "在一局游戏中，使用 咕噜！5次。",
       "descZh": "窒息危险",
       "descEn": "Choking hazard",
       "content": [
@@ -72366,7 +72367,7 @@
         "宝箱房",
         "贪婪|宝箱房"
       ],
-      "unlock": "拾取 橡胶胶水5次。",
+      "unlock": "拾取 橡胶胶水5次。",
       "descZh": "跳跃泪弹",
       "descEn": "Skipping tears",
       "content": [
@@ -73389,7 +73390,7 @@
       "id": "547",
       "quality": "3",
       "charge": "/",
-      "description": "骨心+1。射速上升。生成 神秘纸片。",
+      "description": "骨心+1。射速上升。生成 神秘纸片。",
       "iconPosition": "-128px -864px",
       "tags": [
         "可召唤",
@@ -74315,7 +74316,7 @@
       "id": "556",
       "quality": "3",
       "charge": "3",
-      "description": "使用后，在当前房间内获得 硫磺火的效果。",
+      "description": "使用后，在当前房间内获得 硫磺火的效果。",
       "iconPosition": "-416px -864px",
       "tags": [
         "恶魔",
@@ -76575,7 +76576,7 @@
       "id": "578",
       "quality": "1",
       "charge": "4",
-      "description": "使用后，触发 柠檬派对的效果。",
+      "description": "使用后，触发 柠檬派对的效果。",
       "iconPosition": "-480px -896px",
       "tags": [
         "攻击性"
@@ -81182,7 +81183,7 @@
       "id": "605",
       "quality": "1",
       "charge": "3",
-      "description": "使用后，在当前房间内获得 窥眼的效果。",
+      "description": "使用后，在当前房间内获得 窥眼的效果。",
       "iconPosition": "-32px -960px",
       "tags": [
         "攻击性"
@@ -82219,7 +82220,7 @@
       "id": "616",
       "quality": "3",
       "charge": "/",
-      "description": "发射泪弹时有概率发射 红蜡烛火焰。",
+      "description": "发射泪弹时有概率发射 红蜡烛火焰。",
       "iconPosition": "-352px -960px",
       "tags": [
         "攻击性"
@@ -83487,7 +83488,7 @@
       "id": "626",
       "quality": "0",
       "charge": "/",
-      "description": "与 菜刀碎片2组合成戳刺敌人的跟班。",
+      "description": "与 菜刀碎片2组合成戳刺敌人的跟班。",
       "iconPosition": "-0px -992px",
       "tags": [
         "独特跟班",
@@ -83597,7 +83598,7 @@
       "id": "627",
       "quality": "0",
       "charge": "/",
-      "description": "与 菜刀碎片1组合成戳刺敌人的跟班。",
+      "description": "与 菜刀碎片1组合成戳刺敌人的跟班。",
       "iconPosition": "-32px -992px",
       "tags": [
         "独特跟班",
@@ -84384,7 +84385,7 @@
       "id": "633",
       "quality": "3",
       "charge": "/",
-      "description": "移速上升，伤害上升。回复血量。获得1次 神圣屏障。获得飞行能力。",
+      "description": "移速上升，伤害上升。回复血量。获得1次 神圣屏障。获得飞行能力。",
       "iconPosition": "-64px -1152px",
       "tags": [
         "拉撒路共享",
@@ -105998,7 +105999,7 @@
       "iconPosition": "-64px -192px",
       "tags": [],
       "pools": [],
-      "unlock": "在一局游戏中，拾取 钥匙碎片1和 钥匙碎片2。",
+      "unlock": "在一局游戏中，拾取 钥匙碎片1和 钥匙碎片2。",
       "descZh": "天使战利品",
       "descEn": "Angelic spoils",
       "content": [
@@ -106134,7 +106135,7 @@
       "iconPosition": "-128px -192px",
       "tags": [],
       "pools": [],
-      "unlock": "收集图鉴中的 蓄电池、 9伏特、 车载电池。",
+      "unlock": "收集图鉴中的 蓄电池、 9伏特、 车载电池。",
       "descZh": "带电伙伴",
       "descEn": "Charged friends",
       "content": [
@@ -107076,7 +107077,7 @@
       "id": "142",
       "quality": "0",
       "charge": "/",
-      "description": "每层获得4个 美德之书的精灵跟班。",
+      "description": "每层获得4个 美德之书的精灵跟班。",
       "iconPosition": "-32px -224px",
       "tags": [],
       "pools": [],
@@ -110136,7 +110137,7 @@
       "id": "178",
       "quality": "0",
       "charge": "/",
-      "description": "受伤时概率触发 神风！效果。",
+      "description": "受伤时概率触发 神风！效果。",
       "iconPosition": "-544px -256px",
       "tags": [],
       "pools": [],
@@ -111153,7 +111154,7 @@
       "id": "182",
       "quality": "0",
       "charge": "/",
-      "description": "进入天堂房和捐赠乞丐时生成 美德之书的魂火跟班。",
+      "description": "进入天堂房和捐赠乞丐时生成 美德之书的魂火跟班。",
       "iconPosition": "-32px -288px",
       "tags": [],
       "pools": [],
@@ -112077,7 +112078,7 @@
       "id": "1",
       "quality": "负面",
       "charge": "",
-      "description": "使用后，受到一颗心伤害。如果角色只有一颗心以下，则改为 体力回满。",
+      "description": "使用后，受到一颗心伤害。如果角色只有一颗心以下，则改为 体力回满。",
       "iconPosition": "",
       "tags": [],
       "pools": [],
@@ -113254,7 +113255,7 @@
       "id": "19",
       "quality": "中性",
       "charge": "",
-      "description": "使用后，触发 传送！的效果。",
+      "description": "使用后，触发 传送！的效果。",
       "iconPosition": "",
       "tags": [],
       "pools": [],
@@ -114365,7 +114366,7 @@
       "id": "36",
       "quality": "正面",
       "charge": "",
-      "description": "使用后，触发 游戏掌机的效果。",
+      "description": "使用后，触发 游戏掌机的效果。",
       "iconPosition": "",
       "tags": [],
       "pools": [],
@@ -114930,7 +114931,7 @@
       "id": "45",
       "quality": "正面",
       "charge": "",
-      "description": "使用后，触发 独角兽的残角的效果。",
+      "description": "使用后，触发 独角兽的残角的效果。",
       "iconPosition": "",
       "tags": [],
       "pools": [],
@@ -118204,7 +118205,7 @@
       "iconPosition": "-416px -64px",
       "tags": [],
       "pools": [],
-      "unlock": "收集图鉴中的 怀表和 损坏的怀表。",
+      "unlock": "收集图鉴中的 怀表和 损坏的怀表。",
       "descZh": "品味这一刻",
       "descEn": "Savor the moment",
       "content": [
@@ -118540,7 +118541,7 @@
       "id": "58",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，暂时获得 铲子碎片的效果。",
+      "description": "使用后，暂时获得 铲子碎片的效果。",
       "iconPosition": "-544px -64px",
       "tags": [],
       "pools": [],
@@ -119490,7 +119491,7 @@
       "id": "69",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，触发 亡者之书的效果。",
+      "description": "使用后，触发 亡者之书的效果。",
       "iconPosition": "-256px -96px",
       "tags": [],
       "pools": [],
@@ -119588,7 +119589,7 @@
       "id": "71",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，触发 圣经的效果，暂时生成1个 撒拉弗。",
+      "description": "使用后，触发 圣经的效果，暂时生成1个 撒拉弗。",
       "iconPosition": "-320px -96px",
       "tags": [],
       "pools": [],
@@ -119879,7 +119880,7 @@
       "id": "75",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，获得 夜之幽魂的效果，伤害上升。",
+      "description": "使用后，获得 夜之幽魂的效果，伤害上升。",
       "iconPosition": "-448px -96px",
       "tags": [],
       "pools": [],
@@ -120108,7 +120109,7 @@
       "id": "78",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，触发 红钥匙的效果。",
+      "description": "使用后，触发 红钥匙的效果。",
       "iconPosition": "-544px -96px",
       "tags": [],
       "pools": [],
@@ -120347,7 +120348,7 @@
       "id": "83",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，对当前房间的每个出口触发 红钥匙效果。",
+      "description": "使用后，对当前房间的每个出口触发 红钥匙效果。",
       "iconPosition": "-64px -128px",
       "tags": [],
       "pools": [],
@@ -120414,7 +120415,7 @@
       "id": "84",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，触发 暗仪刺刀的效果。",
+      "description": "使用后，触发 暗仪刺刀的效果。",
       "iconPosition": "-96px -128px",
       "tags": [],
       "pools": [],
@@ -120542,11 +120543,11 @@
     },
     {
       "nameZh": "???的魂石",
-      "nameEn": "Soul of ???",
+      "nameEn": "Soul of ???",
       "id": "85",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，生成8团有毒气体，放置7个 屁股炸弹。",
+      "description": "使用后，生成8团有毒气体，放置7个 屁股炸弹。",
       "iconPosition": "-128px -128px",
       "tags": [],
       "pools": [],
@@ -120621,7 +120622,7 @@
       "id": "86",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，当前房间中生成14个 死鸟跟班。",
+      "description": "使用后，当前房间中生成14个 死鸟跟班。",
       "iconPosition": "-160px -128px",
       "tags": [],
       "pools": [],
@@ -120706,7 +120707,7 @@
       "id": "88",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，触发 超级喷射的效果。",
+      "description": "使用后，触发 超级喷射的效果。",
       "iconPosition": "-224px -128px",
       "tags": [],
       "pools": [],
@@ -120810,7 +120811,7 @@
       "id": "90",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，触发 六面骰和 二十面骰的效果，被重置后的道具从随机道具池中选择。",
+      "description": "使用后，触发 六面骰和 二十面骰的效果，被重置后的道具从随机道具池中选择。",
       "iconPosition": "-288px -128px",
       "tags": [],
       "pools": [],
@@ -121153,7 +121154,7 @@
       "id": "96",
       "quality": "/",
       "charge": "/",
-      "description": "使用后，生成6个 美德之书的随机火球。",
+      "description": "使用后，生成6个 美德之书的随机火球。",
       "iconPosition": "-480px -128px",
       "tags": [],
       "pools": [],
