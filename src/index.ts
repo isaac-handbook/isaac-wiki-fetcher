@@ -5,12 +5,7 @@ import { cleanAllCharas } from "./chara";
 import { cleanAllAchieves } from "./achieve";
 
 const fetch = async () => {
-  const {
-    MODE,
-    TYPE,
-    START_INDEX = 0,
-    TARGET_LENGTH = 2000,
-  } = process.env as any;
+  const { TYPE, START_INDEX = 0, TARGET_LENGTH = 2000 } = process.env as any;
 
   const startIndex = parseInt(START_INDEX);
   const targetLength = parseInt(TARGET_LENGTH);
@@ -22,7 +17,9 @@ const fetch = async () => {
   }
   // 本次存储的目录名称
   const now = new Date();
-  const saveDirectoryName = `${MODE}-${TYPE ?? ""}-${now.getFullYear()}-${
+  const saveDirectoryName = `${
+    TYPE ?? ""
+  }_${startIndex}_${targetLength}_${now.getFullYear()}-${
     now.getMonth() + 1
   }-${now.getDate()}-${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}`;
   const saveDirectory = path.join(baseDirectory, saveDirectoryName);
@@ -56,8 +53,6 @@ const fetch = async () => {
   console.log("startIndex", startIndex);
   console.log("targetLength", targetLength);
   await cleanAllItems(TYPE, startIndex, targetLength, saveDirectory);
-  return saveDirectory;
-
   return saveDirectory;
 };
 
