@@ -2,9 +2,18 @@ import * as path from "path";
 import * as fs from "fs";
 import { cleanAllItems } from "./item";
 import { cleanAllCharas } from "./chara";
+import { cleanAllAchieves } from "./achieve";
 
 const fetch = async () => {
-  const { MODE, TYPE } = process.env as any;
+  const {
+    MODE,
+    TYPE,
+    START_INDEX = 0,
+    TARGET_LENGTH = 2000,
+  } = process.env as any;
+
+  const startIndex = parseInt(START_INDEX);
+  const targetLength = parseInt(TARGET_LENGTH);
 
   // 初始化存储的路径
   const baseDirectory = path.join(__dirname, "..", "output");
@@ -21,31 +30,34 @@ const fetch = async () => {
     fs.mkdirSync(saveDirectory);
   }
 
-  if (MODE === "prod") {
-    if (TYPE === "all") {
-      console.log("即将抓取所有内容");
-      await Promise.all([
-        cleanAllItems("item", 0, 2000, saveDirectory),
-        cleanAllItems("trinket", 0, 2000, saveDirectory),
-        cleanAllItems("card", 0, 2000, saveDirectory),
-        cleanAllItems("pill", 0, 2000, saveDirectory),
-        cleanAllCharas(saveDirectory),
-      ]);
-      return saveDirectory;
-    }
-    if (TYPE === "chara") {
-      console.log("即将抓取所有角色");
-      await cleanAllCharas(saveDirectory);
-      return saveDirectory;
-    }
-    console.log("即将抓取所有类型：" + TYPE);
-    await cleanAllItems(TYPE, 0, 2000, saveDirectory);
+  if (TYPE === "all") {
+    console.log("即将抓取所有内容");
+    await Promise.all([
+      cleanAllItems("item", startIndex, targetLength, saveDirectory),
+      cleanAllItems("trinket", startIndex, targetLength, saveDirectory),
+      cleanAllItems("card", startIndex, targetLength, saveDirectory),
+      cleanAllItems("pill", startIndex, targetLength, saveDirectory),
+      cleanAllCharas(saveDirectory),
+      cleanAllAchieves(saveDirectory),
+    ]);
     return saveDirectory;
   }
-
-  if (MODE === "dev") {
-    await cleanAllItems(undefined, undefined, undefined, saveDirectory);
+  if (TYPE === "chara") {
+    console.log("即将抓取所有角色");
+    await cleanAllCharas(saveDirectory);
+    return saveDirectory;
   }
+  if (TYPE === "achieve") {
+    console.log("即将抓取所有成就");
+    await cleanAllAchieves(saveDirectory);
+    return saveDirectory;
+  }
+  console.log("即将抓取所有类型：" + TYPE);
+  console.log("startIndex", startIndex);
+  console.log("targetLength", targetLength);
+  await cleanAllItems(TYPE, startIndex, targetLength, saveDirectory);
+  return saveDirectory;
+
   return saveDirectory;
 };
 

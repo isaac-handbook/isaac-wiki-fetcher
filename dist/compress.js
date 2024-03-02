@@ -1,6 +1,6 @@
 const fs = require("fs");
-const path = "./isaac-handbook-data.json";
-// const path = "./isaac-exam-data.json";
+// const path = "./isaac-handbook-data.json";
+const path = "./isaac-exam-data.json";
 
 // 读取文件
 fs.readFile(path, "utf8", (err, data) => {
