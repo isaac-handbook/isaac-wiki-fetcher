@@ -12,7 +12,7 @@
     "fetch:pill": "TYPE=pill npm start",
     "fetch:chara": "TYPE=chara npm start",
     "fetch:achieve": "TYPE=achieve npm start",
-    "fetch:item:extra": "MODE=prod TYPE=item START_INDEX=101 TARGET_LENGTH=1 npm start",
+    "fetch:item:s": "MODE=prod TYPE=item START_INDEX=134 TARGET_LENGTH=1 npm start",
     "dev": "nodemon",
     "dev:chara": "nodemon --exec ts-node --transpile-only src/chara/index.ts"
   },

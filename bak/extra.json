@@ -40,7 +40,7 @@
   "sacrificeRoom": {
     "columns": [
       {
-        "title": "次数",
+        "title": "献祭次数",
         "key": "sacrifice"
       },
       {
@@ -601,13 +601,11 @@
       "columns": [
         {
           "title": "人物",
-          "key": "chara",
-          "width": "80"
+          "key": "chara"
         },
         {
           "title": "效果",
-          "key": "effect",
-          "width": "250"
+          "key": "effect"
         }
       ],
       "data": [

@@ -490,6 +490,13 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
     /部分胶囊会转换为其他胶囊：/g,
     "部分胶囊会转换为其他胶囊。"
   );
+  value = value.replace(/鞭虫/g, "鞭形虫");
+  value = value.replace(/懒虫/g, "懒懒虫");
+  value = value.replace(/麻袋头/g, "福袋头");
+  value = value.replace(/杏仁牛奶/g, "杏仁奶");
+  value = value.replace(/狗的牙齿/g, "狗牙");
+  value = value.replace(/射手座/g, "人马座");
+  value = value.replace(/死亡名单/g, "死神名册");
 
   value = value.replace(/小战争/g, "{{file|小战争.png}}小战争");
   value = value.replace(/小瘟疫/g, "{{file|小瘟疫.png}}小瘟疫");
@@ -535,7 +542,14 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   value = value.replace(/\{\{item\|秒表\}\}/g, "{{item|怀表}}");
   value = value.replace(/\{\{item\|传送\}\}/g, "{{item|传送！}}");
   value = value.replace(/\{\{item\|捆绑包\}\}/g, "{{item|慈善捆绑包}}");
-  value = value.replace(/\{\{item\|插头\}\}/g, "锋利插头");
+  value = value.replace(/\{\{item\|插头\}\}/g, "{{item|锋利插头}}");
+  value = value.replace(/\{\{item\|旧电容\}\}/g, "{{item|老旧电容}}");
+  value = value.replace(
+    /\{\{item\|该隐的另一只眼睛\}\}/g,
+    "{{item|该隐的另一只眼}}"
+  );
+
+  value = value.replace(/\\\}\}/g, "}}");
 
   // 如果以#开头，则删除这个#
   if (value.startsWith("#")) {

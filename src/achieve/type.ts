@@ -10,8 +10,6 @@ export interface Achieve {
   iconPosition: string;
   /** 成就描述 中文 */
   descZh: string;
-  /** 成就描述 英文 */
-  descEn: string;
   /** 解锁条件 */
   unlock: string;
   /** 解锁物品 */

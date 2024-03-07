@@ -59,9 +59,15 @@ const run = async (saveDirectory: string) => {
 
         // desc 区块
         const descZone = $(tds[3]);
-        // <br/> 上面的是中文，下面的是英文
-        const descZh = descZone.contents().first().text().trim();
-        const descEn = descZone.contents().last().text().trim();
+        // 遍历找到 descZone 内部的第一个 <br>，取其前面的内容
+        let descZh = "";
+        descZone.contents().each((index, content) => {
+          descZh += $(content).text().trim();
+          // @ts-ignore
+          if (content.tagName === "br") {
+            return false;
+          }
+        });
 
         const unlock = convertHTML($(tds[4]), $);
         const unlockItem = convertHTML($(tds[5]), $);
@@ -72,7 +78,6 @@ const run = async (saveDirectory: string) => {
           nameEn,
           iconPosition,
           descZh,
-          descEn,
           unlock,
           unlockItem,
           type,
