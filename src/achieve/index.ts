@@ -38,9 +38,9 @@ const run = async (saveDirectory: string) => {
         const tds = $(tr).find("td");
         const id = $(tds[0]).text().trim();
 
-        const type = achieveTypeMap[h2Text];
+        const achieveType = achieveTypeMap[h2Text];
 
-        if (type > 4) {
+        if (achieveType > 4) {
           return;
         }
 
@@ -80,7 +80,7 @@ const run = async (saveDirectory: string) => {
           descZh,
           unlock,
           unlockItem,
-          type,
+          achieveType,
         });
       });
     }

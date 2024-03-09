@@ -1,21 +1,13 @@
+import { Item } from "src/item/type";
+
 /** 一个成就 */
-export interface Achieve {
-  /** 成就 ID */
-  id: string;
-  /** 中文名称 */
-  nameZh: string;
-  /** 英文名称 */
-  nameEn: string;
-  /** 图标坐标 */
-  iconPosition: string;
-  /** 成就描述 中文 */
-  descZh: string;
-  /** 解锁条件 */
-  unlock: string;
+export interface Achieve extends Partial<Item> {
   /** 解锁物品 */
-  unlockItem: string;
+  unlockItem?: string;
   /** 成就类型 */
-  type: number;
+  achieveType: number;
+  /** 临时数据，用于搜索 */
+  tmp?: string;
 }
 
 export const achieveTypeMap = {
