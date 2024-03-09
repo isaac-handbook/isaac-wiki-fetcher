@@ -1440,5 +1440,211 @@
         }
       ]
     }
-  }
+  },
+  "curse": [
+    {
+      "nameZh": "致盲诅咒",
+      "nameEn": "Curse of the Blind",
+      "content": [
+        {
+          "level": 0,
+          "extra": [],
+          "children": [
+            {
+              "level": 1,
+              "value": "所有道具都会显示为一个问号，在拾取道具之前无法得知其是什么道具",
+              "extra": [],
+              "children": [
+                {
+                  "level": 2,
+                  "value": "{{item|捕梦网}}可以让玩家无视致盲诅咒在以撒的梦中知道下一层宝箱房的道具",
+                  "extra": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameZh": "黑暗诅咒",
+      "nameEn": "Curse of Darkness",
+      "content": [
+        {
+          "level": 0,
+          "extra": [],
+          "children": [
+            {
+              "level": 1,
+              "value": "楼层的光照大幅度下降，角色周围的发光光环、萤火虫、火焰、爆炸、激光束和会对角色产生影响的水迹看起来变得更加明显。",
+              "extra": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameZh": "迷途诅咒",
+      "nameEn": "Curse of the Lost",
+      "content": [
+        {
+          "level": 0,
+          "extra": [],
+          "children": [
+            {
+              "level": 1,
+              "value": "小地图会显示为一个问号，无法查看。",
+              "extra": [],
+              "children": [
+                {
+                  "level": 2,
+                  "value": "使用{{item|失忆症}}会获得迷途诅咒。",
+                  "extra": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameZh": "混乱诅咒",
+      "nameEn": "Curse of the Maze",
+      "content": [
+        {
+          "level": 0,
+          "extra": [],
+          "children": [
+            {
+              "level": 1,
+              "value": "每次进入（包括传送）一个房间时有概率进入一个其他房间，传送时会有屏幕震动和音效提示。有时已揭示的房间之间会相互交换内含物，而无特效提示。",
+              "extra": [],
+              "children": [
+                {
+                  "level": 2,
+                  "value": "使用{{item|？？？}}会获得混乱诅咒。",
+                  "extra": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 1,
+              "value": "可以传送到上锁的房间中。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameZh": "未知诅咒",
+      "nameEn": "Curse of the Unknown",
+      "content": [
+        {
+          "level": 0,
+          "extra": [],
+          "children": [
+            {
+              "level": 1,
+              "value": "隐藏血量状态栏，玩家无法查看剩余血量",
+              "extra": [],
+              "children": [
+                {
+                  "level": 2,
+                  "value": "血量规则不变，加减血量照常，只是不显示。",
+                  "extra": [],
+                  "children": []
+                },
+                {
+                  "level": 2,
+                  "value": "当角色只剩半颗心时，进入房间仍会有尿液标记。",
+                  "extra": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameZh": "迷宫诅咒",
+      "nameEn": "Curse of the Labyrinth",
+      "content": [
+        {
+          "level": 0,
+          "extra": [],
+          "children": [
+            {
+              "level": 1,
+              "value": "该层变为两层大小的合并层（超大楼层），拥有两个{{room|宝箱房}}和两个相连的{{room|头目房}}。",
+              "extra": [],
+              "children": [
+                {
+                  "level": 2,
+                  "value": "其他特殊房间生成规则不变。",
+                  "extra": [],
+                  "children": []
+                },
+                {
+                  "level": 2,
+                  "value": "如果诅咒发生在第一章，则两个{{room|宝箱房}}的门都会解锁。",
+                  "extra": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 1,
+              "value": "只出现在前四章每个章节的第一层。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameZh": "诅咒诅咒",
+      "nameEn": "Curse of the Cursed",
+      "content": [
+        {
+          "level": 0,
+          "extra": [],
+          "children": [
+            {
+              "level": 1,
+              "value": "把所有普通门都变成{{room|诅咒房}}的门。",
+              "extra": []
+            },
+            {
+              "level": 1,
+              "value": "该诅咒只出现在{{挑战|10}}中，或激活 CVRS ED 时。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameZh": "大房间诅咒",
+      "nameEn": "Curse of the Giant",
+      "content": [
+        {
+          "level": 0,
+          "extra": [],
+          "children": [
+            {
+              "level": 1,
+              "value": "将普通大小的房间合并为2x2大小的房间，由4个房间组成。",
+              "extra": []
+            },
+            {
+              "level": 1,
+              "value": "该诅咒未在游戏中实装。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -59,6 +59,10 @@ const parseText = async (
   text = text.replace(/\[\[文件:(.*?)\]\]/g, "{{file|$1}}");
   text = text.replace(/\[\[File:(.*?)\]\]/g, "{{file|$1}}");
 
+  // 将所有 [[成就/XXX]] 替换为 {{achi|XXX}}
+  text = text.replace(/\[\[成就\/(.*?)\]\]/g, "{{achi|$1}}");
+  text = text.replace(/\[\[成就:(.*?)\]\]/g, "{{achi|$1}}");
+
   text = mergeEditLines(text);
   // 去掉注释、换行等
   // text = removeComments(text);
@@ -171,8 +175,7 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
 
   value = value.replace(/\{\{plat\|(.*?)\}\}/g, "$1");
 
-  value = value.replace(/\{\{curse\|(.*?)\}\}/g, "$1");
-  value = value.replace(/\{\{Curse\|(.*?)\}\}/g, "$1");
+  value = value.replace(/\{\{Curse\|/g, "{{curse|");
 
   // 将 =XXX= 转换为 XXX。需要注意，XXX不超过3个字符
   value = value.replace(/=(.{1,4})=/g, "$1");
@@ -212,14 +215,6 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   }
 
   value = value.replace(/：：/g, "：");
-
-  // if (value.includes("{{main")) {
-  //   value = "{{FIXME 存在main跳转标签}}" + value;
-  // }
-
-  // if (value.includes("{{Main")) {
-  //   value = "{{FIXME 存在main跳转标签}}" + value;
-  // }
 
   if (value.includes("{{main") || value.includes("{{Main")) {
     value = "";
@@ -513,13 +508,15 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   );
 
   value = value.replace(/。\|/g, "。");
-  value = value.replace(/成就\//g, "成就#");
+
+  // value = value.replace(/成就\//g, "成就#");
+  // value = value.replace(/挑战\|/g, "挑战#");
+
   value = value.replace(/雅各\|雅各和以扫\|/g, "雅各和以扫");
   value = value.replace(/雅各\|雅各和以扫/g, "雅各和以扫");
   value = value.replace(/\(卡牌\)/g, "");
   value = value.replace(/link\=/g, "");
   value = value.replace(/\}\}\}：/g, "}}：");
-  value = value.replace(/挑战\|/g, "挑战#");
   value = value.replace(/自杀之王\(卡牌\)/g, "自杀之王");
   value = value.replace(/黑桃A\(卡牌\)\|黑桃A/g, "黑桃A");
   value = value.replace(/Room\|/g, "room|");
@@ -559,8 +556,9 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   // 将所有 $$XXX$$ 转换为 {{math|XXX}}
   value = value.replace(/\$\$([^$]+)\$\$/g, "{{math|$1}}");
 
-  // 将所有 {{achi|XXX|text}} 替换为 成就XXX
-  value = value.replace(/\{\{achi\|([^|]+)\|text\}\}/g, "成就$1");
+  // 将所有 {{achi|XXX|text}} 替换为 {{achi|XXX}}
+  value = value.replace(/\{\{achi\|([^|]+)\|text\}\}/g, "{{achi|$1}}");
+  // value = value.replace(/\{\{achi\|([^|]+)\|text\}\}/g, "成就$1");
 
   if (value.startsWith("环绕中心的方向可以用鼠标来控制")) {
     value = "";

@@ -45,5 +45,13 @@ export const convertHTML = (
     chara = `{{chara|${charaName}}}`;
   }
 
+  // 将所有 挑战#XXX 替换为 {{挑战|XXX}}，其中 XXX 为纯数字
+  const challenge = target.text()?.match(/挑战#(\d+)/);
+  if (challenge) {
+    target.text(
+      target.text()?.replace(challenge[0], `{{挑战|${challenge[1]}}}`)
+    );
+  }
+
   return target.text()?.trim()?.replace(charaName, chara);
 };

@@ -3,6 +3,7 @@ import * as fs from "fs";
 import { cleanAllItems } from "./item";
 import { cleanAllCharas } from "./chara";
 import { cleanAllAchieves } from "./achieve";
+// import { cleanObject } from "@utils/cleanObject";
 
 const fetch = async () => {
   const { TYPE, START_INDEX = 0, TARGET_LENGTH = 2000 } = process.env as any;
@@ -49,7 +50,7 @@ const fetch = async () => {
     await cleanAllAchieves(saveDirectory);
     return saveDirectory;
   }
-  console.log("即将抓取所有类型：" + TYPE);
+  console.log("即将抓取类型：" + TYPE);
   console.log("startIndex", startIndex);
   console.log("targetLength", targetLength);
   await cleanAllItems(TYPE, startIndex, targetLength, saveDirectory);
@@ -73,6 +74,9 @@ const main = async () => {
   const extraContent = fs.readFileSync(extraFilename, "utf-8");
   const extraObject = JSON.parse(extraContent);
   allItems.extra = extraObject;
+
+  // 下个版本再开启
+  // cleanObject(allItems);
 
   const logFilename = path.join(
     saveDirectory,
