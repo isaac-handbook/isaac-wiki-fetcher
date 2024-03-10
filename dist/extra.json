@@ -1524,7 +1524,7 @@
               "children": [
                 {
                   "level": 2,
-                  "value": "使用{{item|？？？}}会获得混乱诅咒。",
+                  "value": "使用{{item|ID=p31}}会获得混乱诅咒。",
                   "extra": [],
                   "children": []
                 }

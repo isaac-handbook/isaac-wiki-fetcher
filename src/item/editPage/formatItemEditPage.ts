@@ -176,6 +176,8 @@ const formatValue = async (val: string, item: BriefItem, TYPE: CleanType) => {
   value = value.replace(/\{\{plat\|(.*?)\}\}/g, "$1");
 
   value = value.replace(/\{\{Curse\|/g, "{{curse|");
+  // 如果 {{curse|XXX}} 中的 XXX 是以 ！ 结尾的，去掉 ！
+  value = value.replace(/\{\{curse\|(.*?)！\}\}/g, "{{curse|$1}}");
 
   // 将 =XXX= 转换为 XXX。需要注意，XXX不超过3个字符
   value = value.replace(/=(.{1,4})=/g, "$1");

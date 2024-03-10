@@ -5,7 +5,6 @@ import { Chara, CharaInfo } from "./type";
 import * as cheerio from "cheerio";
 import * as fs from "fs";
 import * as path from "path";
-import { myLog } from "../utils/log";
 import { format, formatBaseInfo, formatHealth } from "./utils";
 
 const editUrl =

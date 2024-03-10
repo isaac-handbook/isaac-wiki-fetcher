@@ -53,5 +53,15 @@ export const convertHTML = (
     );
   }
 
+  // 处理诅咒
+  // 寻找每一个 title=诅咒 的 a 标签
+  const curse = target.find("a[title='诅咒']");
+  curse.each((_, a) => {
+    const $a = $(a);
+    const curseName = $a.text().replace("！", "");
+    const curse_ = `{{curse|${curseName}}}`;
+    $a.replaceWith(curse_);
+  });
+
   return target.text()?.trim()?.replace(charaName, chara);
 };

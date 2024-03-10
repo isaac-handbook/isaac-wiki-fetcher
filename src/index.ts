@@ -3,6 +3,7 @@ import * as fs from "fs";
 import { cleanAllItems } from "./item";
 import { cleanAllCharas } from "./chara";
 import { cleanAllAchieves } from "./achieve";
+import { cleanAllChallenge } from "./challenge";
 // import { cleanObject } from "@utils/cleanObject";
 
 const fetch = async () => {
@@ -37,6 +38,7 @@ const fetch = async () => {
       cleanAllItems("pill", startIndex, targetLength, saveDirectory),
       cleanAllCharas(saveDirectory),
       cleanAllAchieves(saveDirectory),
+      cleanAllChallenge(saveDirectory),
     ]);
     return saveDirectory;
   }
@@ -48,6 +50,11 @@ const fetch = async () => {
   if (TYPE === "achieve") {
     console.log("即将抓取所有成就");
     await cleanAllAchieves(saveDirectory);
+    return saveDirectory;
+  }
+  if (TYPE === "challenge") {
+    console.log("即将抓取所有挑战");
+    await cleanAllChallenge(saveDirectory);
     return saveDirectory;
   }
   console.log("即将抓取类型：" + TYPE);
