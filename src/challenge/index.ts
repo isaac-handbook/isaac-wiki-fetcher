@@ -115,7 +115,7 @@ const run = async (saveDirectory: string) => {
     challengeList.push(challenge);
   }
 
-  const logFilename = path.join(saveDirectory, "challenge.json");
+  const logFilename = path.join(saveDirectory, "challenges.json");
 
   // 保存到src同级的output文件夹下
   fs.writeFileSync(logFilename, JSON.stringify(challengeList, null, 2));

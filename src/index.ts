@@ -4,6 +4,7 @@ import { cleanAllItems } from "./item";
 import { cleanAllCharas } from "./chara";
 import { cleanAllAchieves } from "./achieve";
 import { cleanAllChallenge } from "./challenge";
+import { cleanAllSeeds } from "./seed";
 // import { cleanObject } from "@utils/cleanObject";
 
 const fetch = async () => {
@@ -39,6 +40,7 @@ const fetch = async () => {
       cleanAllCharas(saveDirectory),
       cleanAllAchieves(saveDirectory),
       cleanAllChallenge(saveDirectory),
+      cleanAllSeeds(saveDirectory),
     ]);
     return saveDirectory;
   }
@@ -55,6 +57,11 @@ const fetch = async () => {
   if (TYPE === "challenge") {
     console.log("即将抓取所有挑战");
     await cleanAllChallenge(saveDirectory);
+    return saveDirectory;
+  }
+  if (TYPE === "seed") {
+    console.log("即将抓取所有种子");
+    await cleanAllSeeds(saveDirectory);
     return saveDirectory;
   }
   console.log("即将抓取类型：" + TYPE);

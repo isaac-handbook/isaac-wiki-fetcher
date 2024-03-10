@@ -86,7 +86,7 @@ const run = async (saveDirectory: string) => {
     }
   });
 
-  const logFilename = path.join(saveDirectory, "achieve.json");
+  const logFilename = path.join(saveDirectory, "achieves.json");
 
   // 保存到src同级的output文件夹下
   fs.writeFileSync(logFilename, JSON.stringify(achieveList, null, 2));

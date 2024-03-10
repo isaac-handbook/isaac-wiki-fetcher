@@ -13,6 +13,7 @@
     "fetch:chara": "TYPE=chara npm start",
     "fetch:achieve": "TYPE=achieve npm start",
     "fetch:challenge": "TYPE=challenge npm start",
+    "fetch:seed": "TYPE=seed npm start",
     "fetch:single": "MODE=prod TYPE=item START_INDEX=260 TARGET_LENGTH=1 npm start",
     "dev": "nodemon",
     "dev:chara": "nodemon --exec ts-node --transpile-only src/chara/index.ts"
